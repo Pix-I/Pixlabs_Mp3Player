@@ -1,0 +1,44 @@
+<html xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+    <link href="../static/css/AlbumCoverStyle.css"
+          th:href="@{/css/AlbumCoverStyle.css}"
+          rel="stylesheet" media="screen"/>
+    <script type="text/javascript" src="../static/scripts/CoverImageScript.js" th:inline="javascript"
+            th:src="@{/scripts/CoverImageScript.js}"></script>
+</head>
+
+<body>
+<div id="CoverPanel">
+
+    <img id="CoverImage" src="/img/loadCover/51" alt="/images/default_cover.png" width="250"
+         height="250"
+         ondragover="allowDrop(event)"
+         ondrop="playerDrop(event)"
+         onmouseover="hoverScript(event)"
+         onmouseleave="hoverEndScript(event)"
+         draggable="false"
+
+    />
+    <div id="volumeControl">
+        <!--/*@thymesVar id="volume" type="java.lang.Float"*/-->
+        <input type="range" id="vRange"
+               th:value="${volume}"
+               onchange="volumeChangeDrop()"
+               oninput="volumeChange()"
+               min="-30"
+               max="30"
+               size="250"
+
+        /></div>
+    <output id="volumeText">
+        <span id="vol">Volume:</span>
+        <span id="volPercentage">00</span>
+    </output>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+<html xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+    <meta charset="UTF-8"/>
+    <title>PlayerPanel</title>
+</head>
+<body>
+<div id="PlayerPanel" th:fragment="PlayerPanel">
+
+    <div id="AlbumCoverPanel" th:include="AlbumCoverPanel"></div>
+
+    <div id="SoundWave" th:include="SoundWavePanel"></div>
+
+    <div id="PlayerPlaylist" th:include="PlayerTablePanel"></div>
+
+</div>
+
+</body>
+</html>

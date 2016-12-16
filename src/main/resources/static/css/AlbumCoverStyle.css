@@ -1,0 +1,35 @@
+
+#CoverImage :hover {
+    opacity: 1.0;
+}
+
+#volumeControl {
+    position: absolute;
+    left: 120px;
+    top: 115px;
+    -ms-transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    transform: rotate(270deg);
+}
+
+#volumeText {
+    position: absolute;
+    left: 50px;
+    top: 20px;
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+}
+
+#vol {
+
+    opacity: 0;
+}
+
+#volPercentage {
+    opacity: 0;
+}
+
+#vRange {
+    width: 270px;
+}

@@ -1,0 +1,26 @@
+
+#playerTable th {
+    width: 250px;
+}
+
+#playerTablePanel {
+    width: 290px;
+}
+
+.playerTableTh {
+    color: white;
+}
+
+#history th {
+    background-color: #9ebbff;
+    opacity: 0.5;
+}
+
+#currentSong th {
+    background-color: dodgerblue;
+}
+
+#toplay th {
+    background-color: #6474aa;
+    opacity: 0.5;
+}

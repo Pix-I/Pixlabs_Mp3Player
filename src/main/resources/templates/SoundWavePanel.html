@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <link href="../static/css/SoundWaveStyle.css"
+          th:href="@{/css/SoundWaveStyle.css}"
+          rel="stylesheet" media="screen"/>
+
+    <!--<script type="text/javascript" src="../../static/scripts/SoundWaveScript.js" th:inline="javascript" th:src="@{/scripts/SoundWaveScript.js}"></script>-->
+
+</head>
+<body>
+
+<div th:fragment="soundwave" id="SoundWavePanel">
+    <div id="songInfo">
+        <output th:text="${currentTitle}">Title</output>
+        <output th:text="${currentArtist}">Artist</output>
+    </div>
+    <canvas id="soundVisCanvas" width="1900" height="200">
+        Canvas isn't supported by your browser.
+    </canvas>
+    <script th:inline="javascript">
+
+        var Wave;
+
+        $(function () {
+            /*<![CDATA[*/
+            Wave = /*[[${SoundWave}]]*/ null;
+
+            /*]]>*/
+            var canvas = document.getElementById("soundVisCanvas");
+            var context = canvas.getContext("2d");
+
+
+            context.clearRect(0, 0, canvas.width, canvas.height);
+
+            context.beginPath();
+            context.moveTo(0, 100);
+            context.lineTo(1700, 100);
+            context.stroke();
+
+            if (Wave != null) {
+                context.beginPath();
+                for (var i = 0; i < Wave.length; i++) {
+                    context.moveTo(100 + i, 100);
+                    context.lineTo(100 + i, Wave[i] / 1000 + 100);
+                }
+                context.stroke();
+            }
+
+
+        });
+    </script>
+</div>
+</body>
+</html>

@@ -1,0 +1,112 @@
+
+html {
+}
+
+body {
+    font-family: Roboto, sans-serif;
+    color: #0f3c4b;
+    background-color: #e5edf1;
+    padding: 5rem 1.25rem; /* 80 20 */
+    min-width: 1200px;
+}
+
+#dragbox {
+    position: absolute;
+    top: 600px;
+    width: 400px;
+}
+
+#AlbumCoverPanel {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+
+#OptionButton {
+    position: absolute;
+    top: 630px;
+    left: 480px;
+}
+
+#PlayerPlaylist {
+    position: absolute;
+    left: 330px;
+    top: 10%
+}
+
+#UpperPanel {
+    position: absolute;
+    left: 650px;
+    top: 20px;
+}
+
+#LowerPanel {
+    position: absolute;
+    left: 650px;
+    top: 600px;
+}
+
+#SoundWave {
+    position: absolute;
+    top: 400px;
+    left: 5%;
+
+}
+
+#LowerControls {
+    position: absolute;
+    top: 610px;
+    left: 480px;
+}
+
+#PlaylistControls {
+    position: absolute;
+    top: 64px;
+    left: -170px;
+}
+
+button {
+    position: relative;
+    display: block;
+    top: 20px;
+    border-radius: 3px;
+    background-color: #a0b3f4;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 24px;
+    padding: 16px;
+    width: 140px;
+    height: 50px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 4px;
+}
+
+#PlayerControls {
+    display: flex;
+    position: absolute;
+    top: 300px;
+    left: 16%
+
+}
+
+#repeatSpan {
+    font-size: 15px;
+    position: absolute;
+    top: 3px;
+    text-align: center;
+    width: 100%;
+    left: 0;
+
+}
+
+#githubArea {
+    position: absolute;
+    right: 100px;
+    top: 700px;
+}
+
+#githubArea img {
+    width: 200px;
+}

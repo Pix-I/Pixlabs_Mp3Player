@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <script type="text/javascript" src="../static/scripts/PlaylistScript.js"
+            th:src="@{/scripts/PlaylistScript.js}"></script>
+</head>
+<body>
+
+<div th:fragment="PlaylistTable">
+
+    <div id="playListControls">
+        <button type="button" value="Play" onclick="playlistControl('play')">Play</button>
+        <button type="button" value="Play" onclick="playlistControl('copy')">Copy</button>
+        <button type="button" value="Create" onclick="createNewPlaylist()">New</button>
+        <button type="button" value="Clear" onclick="playlistControl('clear')">Clear</button>
+
+    </div>
+
+    <div id="PlaylistHeader">
+        <h2>Playlist</h2>
+
+        <select id="playlistSelect" name="lowerSelect" onchange="loadLowerPlaylist(this)">
+            <option>Playlists</option>
+            <option th:each="pl : ${playlists}"
+                    th:text="${pl.getName()}"
+                    th:selected="${lowerPlaylist==pl}"
+            >Playlists
+            </option>
+
+        </select>
+        <h2>Artist</h2>
+        <select id="artistSelect" onchange="loadLowerPlaylist(this)">
+            <option>Artists</option>
+            <option th:each="plA : ${artists}"
+                    th:text="${plA.getName()}"
+                    th:selected="${lowerPlaylist==plA}"
+            >Artists
+            </option>
+
+        </select>
+        <h2>Album</h2>
+
+        <select id="albumSelect" onchange="loadLowerPlaylist(this)">
+            <option>Albums</option>
+            <option th:each="plAl : ${albums}"
+                    th:text="${plAl.getName()}"
+                    th:selected="${lowerPlaylist==plAl}"
+            >Albums
+            </option>
+
+        </select>
+        <h2>Genre</h2>
+
+        <select id="genreSelect" onchange="loadLowerPlaylist(this)">
+            <option>Genres</option>
+            <option th:each="plG : ${genres}"
+                    th:text="${plG.getName()}"
+                    th:selected="${lowerPlaylist==plG}"
+            >Genres
+            </option>
+
+        </select>
+
+        <div id="SearchBox">
+
+            <input id="LowerSearchBoxInput" onchange="searchLowerPlaylist(this)" value="Search..."/>
+        </div>
+
+    </div>
+    <div th:id="${lowerPlaylist.getName()}" class="PlayerTable" ondragover="allowDrop(event)"
+         ondrop="playlistDrop(event,this,'lower')">
+
+        <div id="plTableContainer" class="tableContainer">
+
+            <table border="0" cellpadding="0" cellspacing="1" class="scrollTable" th:id="${lowerPlaylist.getName()}">
+                <thead class="fixedHeader">
+                <tr>
+                    <th><a href="#">Song name</a></th>
+                    <th><a href="#">Artist</a></th>
+                    <th><a href="#">#Played</a></th>
+                </tr>
+                </thead>
+                <tbody class="scrollContent">
+                <tr th:each="plf : ${lowerPlaylist}"
+                    th:id="${plf.getId()}"
+                    draggable="true"
+                    onclick="playlistClickPlaySong(this)"
+                    ondragstart="songDrag(event)"
+                >
+                    <td th:text="${plf.getTitle()}"></td>
+                    <td th:text="${plf.getArtist()}"></td>
+                    <td th:text="${plf.getnPlayed()}"></td>
+
+                </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

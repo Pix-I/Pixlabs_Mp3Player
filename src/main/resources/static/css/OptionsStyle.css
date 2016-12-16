@@ -1,0 +1,83 @@
+
+#OptionPanel {
+    display: inline;
+}
+
+#Explorer {
+    position: absolute;
+    top: 60px;
+    width: 1000px;
+}
+
+#Explorer table {
+    float: left;
+    display: inline;
+    width: 25%;
+
+}
+
+#Explorer td {
+    opacity: 0.70;
+}
+
+#Explorer th {
+    width: 200px;
+
+    background-color: #1f518f;
+    color: white;
+    display: inline-block;
+    opacity: 0.70;
+}
+
+#Explorer th:hover {
+    opacity: 1;
+}
+
+#Mp3Drag {
+    background-color: #5a828b;
+
+    position: absolute;
+    left: 420px;
+
+    width: 100px;
+    height: 30px;
+}
+
+#Refresh {
+    background-color: #7d658b;
+
+    position: absolute;
+    left: 540px;
+
+    width: 100px;
+    height: 30px;
+}
+
+#SoundPathDrag {
+    background-color: #44448b;
+    position: absolute;
+    left: 180px;
+
+    width: 100px;
+    height: 30px;
+}
+
+#MediaPathDrag {
+    position: absolute;
+    background-color: #dc5652;
+    left: 300px;
+    width: 100px;
+    height: 30px;
+
+}
+
+.dragMedia div {
+    position: relative;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    margin-top: 5px;
+    font-family: "Apple Braille", serif;
+}

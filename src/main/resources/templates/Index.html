@@ -1,0 +1,72 @@
+<html xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Pixlabs</title>
+    <link href="../static/css/indexstyle.css"
+          th:href="@{/css/indexstyle.css}"
+          rel="stylesheet" media="screen"/>
+
+    <link href="../static/css/TableStyle.css"
+          th:href="@{/css/TableStyle.css}"
+          rel="stylesheet" media="screen"/>
+
+    <link href="../static/css/OptionsStyle.css"
+          th:href="@{/css/OptionsStyle.css}"
+          rel="stylesheet" media="screen"/>
+    <link href="../static/css/ControlsStyle.css"
+          th:href="@{/css/ControlsStyle.css}"
+          rel="stylesheet" media="screen"/>
+
+    <script type="text/javascript" src="../static/scripts/index.js" th:src="@{/scripts/index.js}"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
+    <script src="http://malsup.github.com/jquery.form.js"></script>
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,400"/>
+
+
+</head>
+<body>
+
+
+<div id="DragBox" th:include="DragBox">
+
+</div>
+
+
+<div id="PlayerPanel" th:replace="PlayerPanel">
+
+</div>
+<div id="UpperPanel">
+    <div id="PlayerControls">
+        <button id="previousButton" name="previous" type="button" onclick="player('/prevsong')">
+            <span>Previous</span>
+        </button>
+        <button id="playButton" name="play" type="button" onclick="player('/play')"><span>Play</span></button>
+        <button id="nextButton" name="next" type="button" onclick="player('/nextsong')"><span>Next</span></button>
+
+        <button id="repeatButton" name="repeat" type="button" onclick="playerRepeat()">
+            <span id="repeatSpan">repeat</span>
+            <span id="thRepeatSpan" th:text="${repeat}"></span>
+        </button>
+
+
+    </div>
+    <div id="UpperPlaylistPanel" th:include="UpperPlaylistPanel"></div>
+</div>
+<button id="OptionButton" type="button" value="Options"
+        onclick="optionButtonF()"><span id="OptionSpan">Files</span></button>
+
+
+<div id="LowerPanel">
+    <div id="LowerPlaylistPanel" th:include="LowerPlaylistPanel"></div>
+</div>
+
+<div id="githubArea">
+    <a href="">
+        <img th:src="@{img/githubLogo}" th:size="200"/>
+    </a>
+
+</div>
+
+</body>
+</html>

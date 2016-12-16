@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+
+      xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <link href="../static/css/PlayerTableStyle.css"
+          th:href="@{/css/PlayerTableStyle.css}"
+          rel="stylesheet" media="screen"/>
+
+</head>
+
+<body>
+
+
+<table id="playerTablePanel" th:fragment="PlayerTablePanel">
+    <thead>
+    <!--/*@thymesVar id="history" type="java.util.List"*/-->
+    <tr id="history" class="playerTableTh" th:each="m: ${history}">
+
+        <th th:text="${m}" draggable="true" ondragstart="drag(event)" id="historyTH"></th>
+    </tr>
+    <tr id="currentSong" class="playerTableTh">
+
+        <th th:text="${current}" draggable="true" ondragstart="drag(event)" id="currentSongTH"></th>
+    </tr>
+    <!--/*@thymesVar id="toplay" type="java.util.List"*/-->
+    <tr id="toplay" th:each="m: ${toplay}" class="playerTableTh">
+
+        <th th:text="${m}" draggable="true" ondragstart="drag(event)" id="toplayTH"></th>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+
+</table>
+
+</body>
+</html>

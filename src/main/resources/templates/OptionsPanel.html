@@ -1,0 +1,79 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Pixlabs</title>
+    <script type="text/javascript" src="../static/scripts/OptionsScripts.js"
+            th:src="@{/scripts/OptionsScripts.js}"></script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
+    <script src="http://malsup.github.com/jquery.form.js"></script>
+
+<body>
+
+<div th:fragment="OptionPanel" ID="OptionPanel">
+    <script th:inline="javascript">
+
+        $(function () {
+            /*<![CDATA[*/
+            origin = /*[[${origin}]]*/ null;
+
+            /*]]>*/
+        });
+    </script>
+
+
+    <div class="dragMedia" id="SoundPathDrag" draggable="true"
+         ondragstart=dragStart(event)>
+        <div th:id="${soundFolderName}">
+            <span>Sound</span>
+        </div>
+
+    </div>
+    <div class="dragMedia" id="MediaPathDrag" draggable="true"
+         ondragstart=dragStart(event)>
+        <div th:id="${mediaFolderName}">
+            <span>Media</span>
+        </div>
+
+    </div>
+    <div class="dragMedia" id="Mp3Drag" draggable="true"
+         ondragstart="dragStart(event)">
+        <div id="LoadMp3">
+            <span>Get Mp3</span>
+        </div>
+    </div>
+
+    <div class="dragMedia" id="Refresh" onclick="refresh()">
+        <div>
+            <span>Refresh</span>
+        </div>
+    </div>
+
+
+    <div id="Explorer">
+        <div th:each="folder,folderStat : ${folderView}">
+            <table th:id="${folderStat.index}">
+                <thead>
+                <tr th:id="${dir+'/'+folderStat.index}" ondrop="mediaPathDrop(event,this)"
+                    th:each="dir : ${folder}"
+                    ondragover="allowDrop(event)"
+                    onclick="folderClick(this.id)">
+
+                    <th th:text="${dir}"
+                    ></th>
+
+                </tr>
+
+                </thead>
+
+            </table>
+
+
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
